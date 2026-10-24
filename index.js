@@ -14,7 +14,15 @@ app.get("/", (req, res) => {
 
 // Write your code here:
 
+app.set("view engine", "ejs");
+app.set("views", path.join(import.meta.dirname, "views"));
 
+app.get("/", (req, res) => {
+  const user = {
+    username: "Jacqueline"
+  };
+  res.render("home", user);
+});
 
 
 
